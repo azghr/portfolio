@@ -1,32 +1,34 @@
-# azghr — A Learner's Log
+# azghr, a working record
 
-A portfolio website bound as a physical book. Flip through chapters of projects
-curated from [github.com/azghr](https://github.com/azghr).
+The portfolio site of Muhammad Asghar Ali, presented as a book you flip
+through. Live at https://azghr.github.io/portfolio/
 
-## Run
+## Run locally
 
-No build step — it's a static site:
+There is nothing to build. Serve the folder with any static server:
 
 ```sh
-# any static server, e.g.
 python3 -m http.server 8000
-# then open http://localhost:8000
 ```
 
-(Opening `index.html` directly also works, though Google Fonts need network.)
+Then open http://localhost:8000. Opening `index.html` straight in the browser
+works too, though the fonts load from Google Fonts so you need to be online.
 
 ## Controls
 
-- Click the page corners, the ← → buttons, or swipe (mobile)
-- Keyboard: ← → to turn pages, `Home`/`End` to jump, Space to advance
-- The Table of Contents entries jump straight to their chapters
+Click the page corners, use the arrow buttons, or swipe on mobile.
+The keyboard also works: left and right arrows turn pages, Home and End jump
+to the covers, Space advances. Entries in the table of contents take you
+straight to their chapter.
 
-## Structure
+## Files
 
-- `index.html` — all content (cover, preface, TOC, chapters I–IV, appendix, ex libris)
-- `styles.css` — cloth covers, paper texture, 3D page turns, print-inspired typography
-- `script.js` — the page-turn engine (z-index bookkeeping, keyboard, swipe, TOC jumps)
+- `index.html`: all the content, from cover to back cover
+- `styles.css`: covers, paper, page turns and typography
+- `script.js`: the page turn engine, keyboard, swipe and contents jumps
+- `favicon.svg`: the browser tab icon
 
 ## Deploy
 
-Push to a `gh-pages` branch (or enable Pages on `main`) at GitHub → Settings → Pages.
+The site deploys itself. Every push to main runs the GitHub Actions workflow
+in `.github/workflows/static.yml`, which publishes to GitHub Pages.
